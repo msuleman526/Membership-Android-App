@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Membership</string>
+    <string name="login_email_hint">Email</string>
+    <string name="login_password_hint">Password</string>
+
+    <string-array name="memberTierValues">
+        <item>RUBY</item>
+        <item>EMERALD</item>
+        <item>SAPPHIRE</item>
+        <item>DIAMOND</item>
+        <item>BLACK DIAMOND</item>
+    </string-array>
+
+    <string-array name="interestedDropDown">
+        <item>Bars</item>
+        <item>Keno</item>
+        <item>Events</item>
+        <item>Spa</item>
+        <item>Restaurant</item>
+        <item>Pokies</item>
+        <item>Sports</item>
+    </string-array>
+
+    <string-array name="banner_list">
+        <item>Is Banned</item>
+        <item>Yes</item>
+    </string-array>
+
+
+</resources>

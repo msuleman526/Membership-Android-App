@@ -1,0 +1,966 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/whiteTextColor">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/headerText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:text="Profile"
+                android:textColor="@color/primaryTextColor"
+                android:textSize="24sp" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/blockCard"
+                android:layout_width="match_parent"
+                android:layout_height="280dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="10dp"
+                app:cardBackgroundColor="@color/whiteTextColor"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="125dp"
+                    android:background="@drawable/profile_background"
+                    android:backgroundTint="#E3CA67"
+                    android:backgroundTintMode="add"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/profileImage"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:padding="5dp"
+                        android:src="@drawable/officer"
+                        app:civ_circle_background_color="@color/primaryTextColor" />
+
+                    <TextView
+                        android:id="@+id/fullNameTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:textSize="22dp"/>
+
+                    <TextView
+                        android:id="@+id/addressTxt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:padding="3dp"
+                        android:text=""
+                        android:textSize="15dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_margin="5dp"
+                        android:layout_gravity="center"
+                        android:gravity="center">
+
+                        <Button
+                            android:id="@+id/sendEmailButton"
+                            android:layout_width="110dp"
+                            android:layout_height="40dp"
+                            android:text="Send Email"
+                            android:layout_margin="3dp"
+                            android:textColor="@color/black"
+                            android:background="@drawable/round"/>
+
+                        <Button
+                            android:id="@+id/sendMessageButton"
+                            android:layout_width="120dp"
+                            android:layout_height="40dp"
+                            android:text="Send Message"
+                            android:layout_margin="3dp"
+                            android:textColor="@color/black"
+                            android:background="@drawable/round"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/blockCard"
+                android:layout_width="match_parent"
+                android:layout_height="280dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="10dp"
+                app:cardBackgroundColor="@color/whiteTextColor"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="5dp">
+
+                <LinearLayout
+                    android:id="@+id/contactHeader"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="#E3E3E3">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="Contact Information"
+                        android:textSize="16dp"
+                        android:textStyle="bold"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="40dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_height="40dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="39dp"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_gravity="center"
+                                android:layout_margin="7dp"
+                                android:paddingTop="3dp"
+                                android:src="@drawable/ic_baseline_email_24"/>
+
+                            <TextView
+                                android:id="@+id/emailTxt"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="7dp"
+                                android:gravity="center|left"
+                                android:text=""/>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#E7E7E7"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_height="40dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="39dp"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_gravity="center"
+                                android:layout_margin="7dp"
+                                android:paddingTop="3dp"
+                                android:src="@drawable/ic_baseline_local_phone_24"/>
+
+                            <TextView
+                                android:id="@+id/phoneTxt"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="7dp"
+                                android:gravity="center|left"
+                                android:text=""/>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#E7E7E7"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_height="40dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="39dp"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_gravity="center"
+                                android:layout_margin="7dp"
+                                android:paddingTop="3dp"
+                                android:src="@drawable/ic_baseline_person_pin_circle_24"/>
+
+                            <TextView
+                                android:id="@+id/sessionTxt"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="7dp"
+                                android:gravity="center|left"
+                                android:text="-"/>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#E7E7E7"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_height="40dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="39dp"
+                            android:layout_weight="10"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_gravity="center"
+                                android:layout_margin="7dp"
+                                android:paddingTop="3dp"
+                                android:src="@drawable/ic_baseline_block_24"/>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="10"
+                                android:layout_height="match_parent"
+                                android:layout_margin="7dp"
+                                android:gravity="center|left"
+                                android:text="Banned"/>
+
+                            <Switch
+                                android:id="@+id/banSwitch"
+                                android:layout_width="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="right"
+                                android:layout_height="wrap_content"/>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#E7E7E7"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_height="40dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="39dp"
+                            android:layout_weight="10"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_gravity="center"
+                                android:layout_margin="7dp"
+                                android:paddingTop="3dp"
+                                android:src="@drawable/ic_baseline_person_24"/>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="10"
+                                android:layout_height="match_parent"
+                                android:layout_margin="7dp"
+                                android:gravity="center|left"
+                                android:text="Contractor"/>
+
+                            <Switch
+                                android:id="@+id/contractorSwitch"
+                                android:layout_width="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="right"
+                                android:layout_height="wrap_content"/>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#E7E7E7"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_height="40dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="39dp"
+                            android:layout_weight="10"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_gravity="center"
+                                android:layout_margin="7dp"
+                                android:paddingTop="3dp"
+                                android:src="@drawable/ic_baseline_person_24"/>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_weight="10"
+                                android:layout_height="match_parent"
+                                android:layout_margin="7dp"
+                                android:gravity="center|left"
+                                android:text="Notify on visit"/>
+
+                            <Switch
+                                android:id="@+id/notifySwift"
+                                android:layout_width="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="right"
+                                android:layout_height="wrap_content"/>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#E7E7E7"/>
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:scrollbars="none"
+                android:layout_height="wrap_content"
+                android:fillViewport="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="10dp"
+                    android:paddingRight="20dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:id="@+id/tab1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="15dp"
+                            android:layout_marginTop="3dp"
+                            android:text="Visitor Details"/>
+
+                        <View
+                            android:id="@+id/tab1View"
+                            android:layout_width="match_parent"
+                            android:layout_height="1.5dp"
+                            android:layout_marginTop="1dp"
+                            android:background="@color/primaryTextColor"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/tab1Card"
+                android:layout_width="match_parent"
+                android:layout_height="475dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="10dp"
+                android:visibility="visible"
+                app:cardBackgroundColor="@color/whiteTextColor"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/contactHeader"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:background="#E3E3E3">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="Visitor Details"
+                            android:textSize="16dp"
+                            android:textStyle="bold"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_height="40dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="39dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="25dp"
+                                android:layout_gravity="center"
+                                android:layout_margin="7dp"
+                                android:textSize="13dp"
+                                android:text="Gender:"
+                                android:textStyle="bold"
+                                android:paddingTop="3dp"
+                                android:src="@drawable/ic_baseline_email_24"/>
+
+                            <TextView
+                                android:id="@+id/genderTxt"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="7dp"
+                                android:gravity="center|left"
+                                android:text=""/>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#E7E7E7"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_height="40dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="39dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="25dp"
+                                android:layout_gravity="center"
+                                android:layout_margin="7dp"
+                                android:textSize="13dp"
+                                android:text="Visitor ID:"
+                                android:textStyle="bold"
+                                android:paddingTop="3dp"
+                                android:src="@drawable/ic_baseline_email_24"/>
+
+                            <TextView
+                                android:id="@+id/visitorIDTxt"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="7dp"
+                                android:gravity="center|left"
+                                android:text=""/>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#E7E7E7"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_height="40dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="39dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="25dp"
+                                android:layout_gravity="center"
+                                android:layout_margin="7dp"
+                                android:textSize="13dp"
+                                android:text="Visitor Type:"
+                                android:textStyle="bold"
+                                android:paddingTop="3dp"
+                                android:src="@drawable/ic_baseline_email_24"/>
+
+                            <TextView
+                                android:id="@+id/visitorTypeTxt"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="7dp"
+                                android:gravity="center|left"
+                                android:text=""/>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#E7E7E7"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_height="40dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="39dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="25dp"
+                                android:layout_gravity="center"
+                                android:layout_margin="7dp"
+                                android:textSize="13dp"
+                                android:text="Contractor:"
+                                android:textStyle="bold"
+                                android:paddingTop="3dp"
+                                android:src="@drawable/ic_baseline_email_24"/>
+
+                            <TextView
+                                android:id="@+id/contractorTxt"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="7dp"
+                                android:gravity="center|left"
+                                android:text=""/>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#E7E7E7"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_height="40dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="39dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="25dp"
+                                android:layout_gravity="center"
+                                android:layout_margin="7dp"
+                                android:textSize="13dp"
+                                android:text="Staff:"
+                                android:textStyle="bold"
+                                android:paddingTop="3dp"
+                                android:src="@drawable/ic_baseline_email_24"/>
+
+                            <TextView
+                                android:id="@+id/staffTxt"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="7dp"
+                                android:gravity="center|left"
+                                android:text=""/>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#E7E7E7"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_height="40dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="39dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="25dp"
+                                android:layout_gravity="center"
+                                android:layout_margin="7dp"
+                                android:textSize="13dp"
+                                android:text="Last Visit:"
+                                android:textStyle="bold"
+                                android:paddingTop="3dp"
+                                android:src="@drawable/ic_baseline_email_24"/>
+
+                            <TextView
+                                android:id="@+id/lastVisitTxt"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="7dp"
+                                android:gravity="center|left"
+                                android:text=""/>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#E7E7E7"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_height="40dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="39dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="25dp"
+                                android:layout_gravity="center"
+                                android:layout_margin="7dp"
+                                android:textSize="13dp"
+                                android:text="Join Date:"
+                                android:textStyle="bold"
+                                android:paddingTop="3dp"
+                                android:src="@drawable/ic_baseline_email_24"/>
+
+                            <TextView
+                                android:id="@+id/joinDateTxt"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="7dp"
+                                android:gravity="center|left"
+                                android:text=""/>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#E7E7E7"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_height="40dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="39dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="25dp"
+                                android:layout_gravity="center"
+                                android:layout_margin="7dp"
+                                android:textSize="13dp"
+                                android:text="Last Updated:"
+                                android:textStyle="bold"
+                                android:paddingTop="3dp"
+                                android:src="@drawable/ic_baseline_email_24"/>
+
+                            <TextView
+                                android:id="@+id/lastUpdatedTxt"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="7dp"
+                                android:gravity="center|left"
+                                android:text=""/>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#E7E7E7"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_height="40dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="39dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="25dp"
+                                android:layout_gravity="center"
+                                android:layout_margin="7dp"
+                                android:textSize="13dp"
+                                android:text="Distance:"
+                                android:textStyle="bold"
+                                android:paddingTop="3dp"
+                                android:src="@drawable/ic_baseline_email_24"/>
+
+                            <TextView
+                                android:id="@+id/distanceTxt"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="7dp"
+                                android:gravity="center|left"
+                                android:text=""/>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#E7E7E7"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_height="40dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="39dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="25dp"
+                                android:layout_gravity="center"
+                                android:layout_margin="7dp"
+                                android:textSize="13dp"
+                                android:text="Banned:"
+                                android:textStyle="bold"
+                                android:paddingTop="3dp"
+                                android:src="@drawable/ic_baseline_email_24"/>
+
+                            <TextView
+                                android:id="@+id/bannedTxt"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="7dp"
+                                android:gravity="center|left"
+                                android:text=""/>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#E7E7E7"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="vertical"
+                        android:layout_height="40dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="39dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="25dp"
+                                android:layout_gravity="center"
+                                android:layout_margin="7dp"
+                                android:textSize="13dp"
+                                android:text="Last Temperature:"
+                                android:textStyle="bold"
+                                android:paddingTop="3dp"
+                                android:src="@drawable/ic_baseline_email_24"/>
+
+                            <TextView
+                                android:id="@+id/lastTmpTxt"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="7dp"
+                                android:gravity="center|left"
+                                android:text=""/>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="#E7E7E7"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+
+    <androidx.cardview.widget.CardView
+        android:visibility="visible"
+        android:id="@+id/msgCard"
+        android:layout_width="440dp"
+        android:layout_height="wrap_content"
+        app:elevation="10dp"
+        android:layout_centerInParent="true"
+        app:cardBackgroundColor="@color/whiteTextColor"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Select Message*"
+                android:layout_marginLeft="2dp"
+                android:textColor="@color/black"
+                android:textSize="15dp"/>
+
+            <Spinner
+                android:id="@+id/messageDropDown"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/gray_round_box"
+                android:spinnerMode="dropdown" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/customMessageCheckBox"
+                    android:layout_width="35dp"
+                    android:gravity="center"
+                    android:layout_height="35dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Custom Message*"
+                    android:layout_marginLeft="2dp"
+                    android:textColor="@color/black"
+                    android:textSize="15dp"/>
+            </LinearLayout>
+
+            <EditText
+                android:textColor="@color/black"
+                android:id="@+id/msgEdit"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="5dp"
+                android:gravity="top|left"
+                android:padding="10dp"
+                android:visibility="gone"
+                android:hint="Write a Message"
+                android:background="@drawable/gray_round_box"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="right"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/cancelSMSBtn"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:text="Cancel"
+                    android:layout_margin="3dp"
+                    android:textColor="@color/black"
+                    android:background="@drawable/round"/>
+
+                <Button
+                    android:id="@+id/sendSMSButton"
+                    android:layout_width="130dp"
+                    android:layout_height="40dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_margin="3dp"
+                    android:background="@drawable/round_all_crners"
+                    android:backgroundTint="@color/primaryTextColor"
+                    android:gravity="center"
+                    android:text="Send Message"
+                    android:textColor="@color/whiteTextColor" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="themeColor">#00a4db</color>
+
+    <!--normal colors-->
+    <color name="darkTextColor">#020000</color>
+
+
+    <!--colors for light mode-->
+    <color name="contentTextColor">#020000</color>
+    <color name="register_bk_color">#00a4db</color>
+    <color name="login_bk_color">#fff</color>
+    <color name="whiteTextColor">#fff</color>
+    <!--    <color name="primaryTextColor">#E75126</color>-->
+    <color name="primaryTextColor">#00a4db</color>
+
+    <color name="gray">#E7E7E7</color>
+    <color name="gray_light">#F8F7F7</color>
+
+    <color name="colorPrimary">#00a4db</color>
+    <color name="colorPrimaryDark">#00a4db</color>
+    <color name="cardColor">#00a4db</color>
+    <color name="colorAccent">#00a4db</color>
+    <color name="colorText">#504F60</color>
+
+    <color name="vip">#009688</color>
+    <color name="active">#4CAF50</color>
+    <color name="warning">#FF9800</color>
+    <color name="blocked">#F44336</color>
+
+
+</resources>

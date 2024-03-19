@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/whiteTextColor"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="110dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="@font/montserrat_bold"
+        android:text="Membership App"
+        android:textColor="@color/primaryTextColor"
+        android:textSize="23dp" />
+
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="400px"
+        android:layout_height="350px"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/crm3" />
+
+    <RelativeLayout
+        android:layout_below="@+id/imageView"
+        android:id="@+id/loginView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="430dp"
+            android:layout_height="72dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/bg_txt_username"
+            android:fontFamily="@font/montserrat_semibold"
+            android:paddingLeft="60dp"
+            android:textColor="@color/colorText"
+            android:textSize="20px" />
+
+        <EditText
+            android:id="@+id/editText2"
+            android:layout_width="430dp"
+            android:layout_height="72dp"
+            android:layout_below="@+id/editText"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/bg_txt_password"
+            android:fontFamily="@font/montserrat_semibold"
+            android:inputType="textPassword"
+            android:paddingLeft="60dp"
+            android:textColor="@color/colorText"
+            android:textSize="20px" />
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="86dp"
+            android:layout_height="86dp"
+            android:layout_below="@+id/editText2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="50dp"
+            android:layout_marginRight="-40dp"
+            android:background="@drawable/bg_btn_login"
+            android:onClick="onLoginClick" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/button"
+            android:layout_centerHorizontal="true"
+            android:layout_marginRight="-17dp"
+            android:fontFamily="@font/montserrat_semibold"
+            android:onClick="onLoginClick"
+            android:text="Sign in"
+            android:textColor="@color/colorText"
+            android:textSize="24px" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:visibility="gone"
+        android:layout_below="@+id/imageView"
+        android:id="@+id/otpView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/otpEdt"
+            android:layout_width="430dp"
+            android:layout_height="72dp"
+            android:layout_below="@+id/imageView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/bg_txt_password"
+            android:fontFamily="@font/montserrat_semibold"
+            android:hint="Enter OTP"
+            android:inputType="text"
+            android:paddingLeft="60dp"
+            android:textColor="@color/colorText"
+            android:textSize="40px"
+            tools:ignore="NotSibling" />
+
+        <Button
+            android:id="@+id/submitOTP"
+            android:layout_width="86dp"
+            android:layout_height="86dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="20dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginEnd="50dp"
+            android:layout_marginRight="-40dp"
+            android:background="@drawable/bg_btn_login"
+            android:layout_below="@+id/otpEdt"
+            android:onClick="onSubmitOTP" />
+
+        <TextView
+            android:id="@+id/submitOTPTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/submitOTP"
+            android:layout_marginRight="-17dp"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/montserrat_semibold"
+            android:onClick="onLoginClick"
+            android:text="Submit OTP"
+            android:textColor="@color/colorText"
+            android:textSize="48px" />
+    </RelativeLayout>
+
+    <!--    <TextView-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginStart="8dp"-->
+    <!--        android:layout_marginEnd="8dp"-->
+    <!--        android:layout_marginBottom="16dp"-->
+    <!--        android:fontFamily="@font/montserrat_light"-->
+    <!--        android:text="Don't you have an account? Create"-->
+    <!--        android:textColor="@color/colorText"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent" />-->
+
+</RelativeLayout>

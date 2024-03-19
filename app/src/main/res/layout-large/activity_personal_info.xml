@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_light">
+
+    <RelativeLayout
+        android:id="@+id/topHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="10">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="165dp"
+            app:cardElevation="10dp"
+            android:layout_marginTop="-25dp"
+            android:layout_marginLeft="-25dp"
+            android:layout_marginRight="-25dp"
+            app:cardCornerRadius="5dp"
+            app:cardBackgroundColor="@color/whiteTextColor"
+            app:cardPreventCornerOverlap="true"
+            app:cardUseCompatPadding="true"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="20dp"
+                    android:gravity="center"
+                    android:text="Membership App"
+                    android:textColor="#535353"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/logoutImage"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_weight="2"
+                    android:src="@drawable/ic_baseline_login_24"
+                    app:civ_border_color="@color/primaryTextColor"
+                    app:civ_border_width="1dp" />
+
+            </RelativeLayout>
+
+            <com.shuhart.stepview.StepView
+                android:id="@+id/stepsView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="35dp"
+                android:padding="16dp"
+                app:sv_animationType="Line"
+                app:sv_doneCircleColor="@color/colorAccent"
+                app:sv_doneCircleRadius="12dp"
+                app:sv_doneStepLineColor="@color/colorAccent"
+                app:sv_doneStepMarkColor="@color/whiteTextColor"
+                app:sv_doneTextColor="@color/colorAccent"
+                app:sv_nextStepLineColor="@color/colorAccent"
+                app:sv_nextTextColor="@color/colorAccent"
+                app:sv_selectedCircleColor="@color/colorAccent"
+                app:sv_selectedCircleRadius="12dp"
+                app:sv_selectedStepNumberColor="@color/whiteTextColor"
+                app:sv_selectedTextColor="@color/colorAccent"
+                app:sv_stepLineWidth="1dp"
+                app:sv_stepNumberTextSize="12sp"
+                app:sv_stepPadding="4dp"
+                app:sv_stepViewStyle="@style/StepView" />
+
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="180dp"
+        android:layout_marginRight="30dp"
+        android:orientation="vertical">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profileImage"
+            android:layout_width="match_parent"
+            android:layout_height="96dp"
+            android:layout_gravity="center|top"
+            android:gravity="center"
+            android:src="@drawable/profile"
+            app:civ_border_color="@color/primaryTextColor"
+            app:civ_border_width="2dp" />
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:padding="5dp"
+            android:alignmentMode="alignBounds"
+            android:columnCount="2"
+            android:rowOrderPreserved="false"
+            android:stretchMode="columnWidth">
+
+
+            <EditText
+                android:id="@+id/firstEdt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/edit_text"
+                android:hint="First Name"
+                android:padding="10dp"
+                android:textColor="@color/primaryTextColor" />
+
+            <EditText
+                android:id="@+id/surEdt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/edit_text"
+                android:hint="Middle Name"
+                android:padding="10dp"
+                android:textColor="@color/primaryTextColor" />
+
+            <EditText
+                android:id="@+id/lastEdt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/edit_text"
+                android:hint="Last Name"
+                android:padding="10dp"
+                android:textColor="@color/primaryTextColor" />
+
+                <EditText
+                    android:id="@+id/preferredName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="5dp"
+                    android:background="@drawable/edit_text"
+                    android:hint="Preferred Name"
+                    android:padding="10dp"
+                    android:textColor="@color/primaryTextColor" />
+
+        </GridLayout>
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:padding="5dp"
+            android:layout_marginTop="-8dp"
+            android:alignmentMode="alignBounds"
+            android:columnCount="1"
+            android:rowOrderPreserved="false"
+            android:stretchMode="columnWidth">
+
+            <EditText
+                android:id="@+id/address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/edit_text"
+                android:hint="Address"
+                android:padding="10dp"
+                android:textColor="@color/primaryTextColor" />
+
+            <EditText
+                android:id="@+id/suburbEdt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/edit_text"
+                android:hint="Suburb"
+                android:padding="10dp"
+                android:textColor="@color/primaryTextColor" />
+
+        </GridLayout>
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:alignmentMode="alignBounds"
+            android:padding="5dp"
+            android:columnCount="2"
+            android:rowOrderPreserved="false"
+            android:stretchMode="columnWidth">
+
+        <EditText
+            android:id="@+id/state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/edit_text"
+            android:hint="State"
+            android:padding="10dp"
+            android:textColor="@color/primaryTextColor" />
+
+        <EditText
+            android:id="@+id/post"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/edit_text"
+            android:hint="Post Code"
+            android:padding="10dp"
+            android:textColor="@color/primaryTextColor" />
+
+        </GridLayout>
+
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:padding="5dp"
+            android:layout_marginTop="-8dp"
+            android:alignmentMode="alignBounds"
+            android:columnCount="1"
+            android:rowOrderPreserved="false"
+            android:stretchMode="columnWidth">
+
+
+            <EditText
+                android:id="@+id/dobEdt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:background="@drawable/edit_text"
+                android:hint="Date Of Birth"
+                android:focusable="false"
+                android:clickable="true"
+                android:inputType="none"
+                android:padding="10dp"
+                android:textColor="@color/primaryTextColor" />
+
+        </GridLayout>
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:alignmentMode="alignBounds"
+            android:padding="5dp"
+            android:columnCount="2"
+            android:rowOrderPreserved="false"
+            android:stretchMode="columnWidth">
+
+            <EditText
+                android:id="@+id/licenseNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/edit_text"
+                android:hint="License Number"
+                android:padding="10dp"
+                android:textColor="@color/primaryTextColor" />
+
+            <EditText
+                android:id="@+id/expiry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/edit_text"
+                android:hint="Expiry Date"
+                android:focusable="false"
+                android:clickable="true"
+                android:inputType="none"
+                android:padding="10dp"
+                android:textColor="@color/primaryTextColor" />
+
+
+        </GridLayout>
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:padding="5dp"
+            android:alignmentMode="alignBounds"
+            android:columnCount="1"
+            android:rowOrderPreserved="false"
+            android:stretchMode="columnWidth">
+
+            <EditText
+                android:id="@+id/country"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/edit_text"
+                android:hint="Country"
+                android:padding="10dp"
+                android:textColor="@color/colorPrimary" />
+
+            <Spinner
+                android:id="@+id/membershipType"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:layout_marginBottom="10dp"
+                android:layout_columnWeight="1"
+                android:visibility="gone"
+                android:background="@drawable/edit_text"
+                android:hint="Membership Type"
+                android:padding="3dp"
+                android:textColor="@color/colorPrimary" />
+
+            <Spinner
+                android:id="@+id/membershipTier"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:layout_marginBottom="10dp"
+                android:layout_columnWeight="1"
+                android:visibility="gone"
+                android:entries="@array/memberTierValues"
+                android:background="@drawable/edit_text"
+                android:hint="Membership Tier"
+                android:padding="3dp"
+                android:textColor="@color/colorPrimary" />
+
+
+        </GridLayout>
+
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="-25dp"
+        android:layout_marginRight="-25dp"
+        android:layout_marginBottom="-18dp"
+        app:cardBackgroundColor="@color/whiteTextColor"
+        app:cardCornerRadius="5dp"
+        app:cardElevation="10dp"
+        app:cardPreventCornerOverlap="true"
+        app:cardUseCompatPadding="true">
+
+        <Button
+            android:id="@+id/submitBtn"
+            android:layout_width="120dp"
+            android:layout_height="45dp"
+            android:layout_gravity="right"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="2dp"
+            android:background="@drawable/rounded_btn"
+            android:backgroundTint="@color/primaryTextColor"
+            android:text="Save &amp; Next"
+            android:textColor="@color/whiteTextColor" />
+
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>

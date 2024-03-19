@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_margin="10dp"
+    android:background="@drawable/rounded"
+    android:layout_height="100dp">
+
+    <LinearLayout
+        android:id="@+id/headerFilter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/filterTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:textColor="#000000"
+            android:text="Filters"/>
+
+        <TextView
+            android:id="@+id/clearTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="10dp"
+            android:text="Clear Filters"
+            android:textSize="20dp"
+            android:textColor="#DDDDDD"/>
+    </LinearLayout>
+
+    <Spinner
+        android:id="@+id/bannedSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@+id/headerFilter"
+        android:layout_margin="10dp"
+        android:entries="@array/banner_list"
+        android:background="@drawable/round_edit_text"/>
+
+</RelativeLayout>
