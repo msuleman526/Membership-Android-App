@@ -77,6 +77,7 @@ public class TakePhotoActivity extends AppCompatActivity {
             imageView.setImageBitmap(decodedByte);
             title.setText("Welcome "+ Utils.toTitleCase(object.get("name").toString()));
         }catch (Exception e){
+            Log.d("EEEEERRRR", e.toString());
             object = new JSONObject();
         }
 

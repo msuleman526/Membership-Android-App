@@ -105,7 +105,7 @@ public class PersonalInfoActivity extends AppCompatActivity {
                         obj.put("suburb", subburbEdt.getText().toString());
                         obj.put("dob", dateOfBirthEdt.getText().toString());
                         obj.put("license_no", licenseNumberEdt.getText().toString());
-                        obj.put("license_number", licenseNumberEdt.getText().toString());
+                        obj.put("license", licenseNumberEdt.getText().toString());
                         obj.put("expiry", expiryEdt.getText().toString());
                         obj.put("state", stateEdt.getText().toString());
                         obj.put("postcode", postCodeEdt.getText().toString());
@@ -327,14 +327,17 @@ public class PersonalInfoActivity extends AppCompatActivity {
         }catch (Exception ee){}
 
         try{
-            if(obj.get("license_number") != null && !obj.get("license_number").toString().equals("") && !obj.get("license_number").toString().equals("null")){
-                licenseNumberEdt.setText(obj.get("license_number").toString());
+            Log.d("OBJCCCC", obj.toString());
+            if(obj.get("license") != null && !obj.get("license").toString().equals("") && !obj.get("license").toString().equals("null")){
+                licenseNumberEdt.setText(obj.get("license").toString());
             }
-        }catch (Exception ee){}
+        }catch (Exception ee){
+            Log.d("ERRRRRRRORRR", ee.toString());
+        }
 
         try{
-            if(obj.get("expiry") != null && !obj.get("expiry").toString().equals("") && !obj.get("expiry").toString().equals("null")){
-                expiryEdt.setText(obj.get("expiry").toString());
+            if(obj.get("exp") != null && !obj.get("exp").toString().equals("") && !obj.get("exp").toString().equals("null")){
+                expiryEdt.setText(obj.get("exp").toString());
             }
         }catch (Exception ee){}
 
@@ -360,11 +363,11 @@ public class PersonalInfoActivity extends AppCompatActivity {
             if(obj.get("dob").toString().equals("null")){
                 dateOfBirthEdt.setText(obj.get("dob").toString());
             }
-            if(obj.get("license_number").toString().equals("null")){
-                licenseNumberEdt.setText(obj.get("license_number").toString());
+            if(obj.get("license").toString().equals("null")){
+                licenseNumberEdt.setText(obj.get("license").toString());
             }
-            if(obj.get("expiry").toString().equals("null")){
-                expiryEdt.setText(obj.get("expiry").toString());
+            if(obj.get("exp").toString().equals("null")){
+                expiryEdt.setText(obj.get("exp").toString());
             }
         }catch (Exception e){}
     }

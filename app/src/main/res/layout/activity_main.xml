@@ -102,12 +102,6 @@
 
     </LinearLayout>
 
-    <ImageView
-        android:layout_width="400dp"
-        android:layout_height="500dp"
-        android:layout_marginTop="120dp"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/dummyPicture"/>
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
