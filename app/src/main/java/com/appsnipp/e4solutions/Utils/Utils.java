@@ -19,6 +19,10 @@ import cn.pedant.SweetAlert.SweetAlertDialog;
 public class Utils {
 
     public static String toTitleCase(String givenString) {
+        givenString = givenString.replace("2", "");
+        givenString = givenString.replace("1", "");
+        givenString = givenString.replace(".", "");
+        givenString = givenString.replace(",", "");
         String[] arr = givenString.split(" ");
         StringBuffer sb = new StringBuffer();
 
@@ -70,6 +74,10 @@ public class Utils {
     }
 
     public static String firstLetterCapital(String str){
+        str = str.replace("2", "");
+        str = str.replace("1", "");
+        str = str.replace(".", "");
+        str = str.replace(",", "");
         return str.substring(0, 1).toUpperCase() + str.substring(1);
     }
 

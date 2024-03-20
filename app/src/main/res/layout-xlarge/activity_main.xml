@@ -81,13 +81,12 @@
 
         </androidx.cardview.widget.CardView>
 
-        <com.otaliastudios.cameraview.CameraView
-            android:id="@+id/camera"
+        <androidx.camera.view.PreviewView
             android:layout_width="530dp"
             android:layout_height="720dp"
             android:layout_gravity="center"
-            android:layout_marginTop="40dp"
-            android:keepScreenOn="false" />
+            android:layout_marginTop="10dp"
+            android:id="@+id/cameraPreview"/>
 
         <ImageView
             android:id="@+id/cameraButton"
