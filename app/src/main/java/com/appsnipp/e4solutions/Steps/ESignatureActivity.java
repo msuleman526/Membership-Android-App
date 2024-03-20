@@ -207,8 +207,8 @@ public class ESignatureActivity extends AppCompatActivity {
             String state = jsonObject.get("state") != null && !jsonObject.get("state").equals("") ? jsonObject.get("state").toString() : "";
             String postCode = jsonObject.get("postcode") != null && !jsonObject.get("postcode").equals("") ? jsonObject.get("postcode").toString() : "";
 
-            String expiryDate = jsonObject.get("expiry") != null && !jsonObject.get("expiry").equals("") ? jsonObject.get("expiry").toString() : "";
-            String licenseNumber = jsonObject.get("license_number") != null && !jsonObject.get("license_number").equals("") ? jsonObject.get("license_number").toString() : "";
+            String expiryDate = jsonObject.get("exp") != null && !jsonObject.get("exp").equals("") ? jsonObject.get("exp").toString() : "";
+            String licenseNumber = jsonObject.get("license") != null && !jsonObject.get("license").equals("") ? jsonObject.get("license").toString() : "";
 
             String countryCode = "036";
 

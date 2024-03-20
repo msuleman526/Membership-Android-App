@@ -52,12 +52,9 @@ import com.appsnipp.e4solutions.Utils.DialogView;
 import com.appsnipp.e4solutions.Utils.SessionUtil;
 import com.appsnipp.e4solutions.Utils.Utils;
 import com.google.common.util.concurrent.ListenableFuture;
-import com.priyankvasa.android.cameraviewex.CameraView;
-import com.priyankvasa.android.cameraviewex.ErrorLevel;
-import com.priyankvasa.android.cameraviewex.Image;
 import com.shuhart.stepview.StepView;
-import com.yalantis.ucrop.UCrop;
-
+import com.theartofdev.edmodo.cropper.CropImage;
+import com.theartofdev.edmodo.cropper.CropImageView;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -65,22 +62,14 @@ import org.json.JSONObject;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.net.URI;
-import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
-import java.util.UUID;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
-import java.util.function.Function;
 
 import cn.pedant.SweetAlert.SweetAlertDialog;
-import kotlin.Unit;
-import kotlin.jvm.functions.Function0;
-import kotlin.jvm.functions.Function1;
-import kotlin.jvm.functions.Function2;
+
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.MediaType;
@@ -124,45 +113,11 @@ public class MainActivity extends AppCompatActivity implements LifecycleOwner {
 
         previewView = findViewById(R.id.cameraPreview);
         cameraButton = findViewById(R.id.cameraButton);
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
-            return;
+        if (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+            activityResultLauncher.launch(Manifest.permission.CAMERA);
+        } else {
+            startCamera(cameraFacing);
         }
-
-//        camera.addCameraListener(new CameraListener() {
-//            @Override
-//            public void onPictureTaken(PictureResult result) {
-//                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
-//
-//                    String s = null;
-//                    try {
-//                        s = new String(result.getData(), "UTF-8");
-//                        Uri uri = Uri.parse(s);
-//                        ImageView img = (ImageView) findViewById(R.id.dummyPicture);
-//                        img.setImageURI(uri);
-//                    } catch (UnsupportedEncodingException e) {
-//                        throw new RuntimeException(e);
-//                    }
-//
-//
-//                    Log.d("SIZEEEE", ""+ result.getSize().getWidth() + " - " + result.getSize().getHeight());
-//                    result.toBitmap(result.getSize().getWidth(), result.getSize().getHeight(), new BitmapCallback() {
-//                        @Override
-//                        public void onBitmapReady(@Nullable Bitmap bitmap) {
-//                            ImageView img = (ImageView) findViewById(R.id.dummyPicture);
-//                            img.setImageBitmap(bitmap);
-//                            String destinationUri = new StringBuilder(UUID.randomUUID().toString()).append(".jpg").toString();
-//                            Uri uri = getImageUri(MainActivity.this, bitmap);
-//                            UCrop.of(uri, Uri.fromFile(new File(getCacheDir(), destinationUri)))
-//                                    .start(MainActivity.this);
-//                        }
-//                    });
-//                } else {
-//                    Toast.makeText(MainActivity.this, "Mobile not support for this feature", Toast.LENGTH_SHORT).show();
-//                }
-//            }
-//        });
-//        camera.open();
-
     }
 
     public void startCamera(int cameraFacing) {
@@ -196,6 +151,7 @@ public class MainActivity extends AppCompatActivity implements LifecycleOwner {
                 });
                 preview.setSurfaceProvider(previewView.getSurfaceProvider());
             } catch (Exception e) {
+                Log.d("ERRROR", e.toString());
                 e.printStackTrace();
             }
         }, ContextCompat.getMainExecutor(this));
@@ -210,8 +166,9 @@ public class MainActivity extends AppCompatActivity implements LifecycleOwner {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        ImageView img = (ImageView) findViewById(R.id.dummyPicture);
-                        img.setImageURI(outputFileResults.getSavedUri());
+                        CropImage.activity(outputFileResults.getSavedUri())
+                            .setGuidelines(CropImageView.Guidelines.ON)
+                            .start(MainActivity.this);
                     }
                 });
                 startCamera(cameraFacing);
@@ -357,7 +314,7 @@ public class MainActivity extends AppCompatActivity implements LifecycleOwner {
                             public void run() {
                                 pd.cancel();
                                 pd.dismiss();
-                                Log.d("Response", yourResponse);
+                                Log.d("Responseeeee", yourResponse);
                                 verifyInfoAndGoToNext(yourResponse, bitmapBase64);
                             }
                         });
@@ -419,7 +376,7 @@ public class MainActivity extends AppCompatActivity implements LifecycleOwner {
             licenseJSONResponse = new JSONObject(response);
             if (!licenseJSONResponse.get("name").equals("") && !licenseJSONResponse.get("name").equals("null") && !licenseJSONResponse.get("face").equals("null")) {
                 Intent intent = new Intent(MainActivity.this, TakePhotoActivity.class);
-                licenseJSONResponse.put("license", base64Img);
+                licenseJSONResponse.put("license_img", base64Img);
                 licenseJSONResponse.put("homephone", "");
                 licenseJSONResponse.put("mobilephone", "");
                 licenseJSONResponse.put("occupation", "");
@@ -433,9 +390,10 @@ public class MainActivity extends AppCompatActivity implements LifecycleOwner {
                 licenseJSONResponse.put("postcode", "");
                 licenseJSONResponse.put("country", "");
 
-                String capturedAddress = licenseJSONResponse.get("address").toString();
+                String capturedAddress = "";
 
                 try {
+                    capturedAddress = licenseJSONResponse.get("address").toString();
                     String address = capturedAddress;
                     String[] addressData = address.split(",");
                     address = addressData[0];
@@ -478,21 +436,24 @@ public class MainActivity extends AppCompatActivity implements LifecycleOwner {
                 Toast.makeText(MainActivity.this, "Invalid License / Blur License. Try Again", Toast.LENGTH_SHORT).show();
             }
         } catch (JSONException e) {
-            Toast.makeText(MainActivity.this, "Invalid License / Blur License. Try Again", Toast.LENGTH_SHORT).show();
+            Log.d("ERRRORR", e.toString());
+            Toast.makeText(MainActivity.this, "Invalid License / Blur License. Try Again/", Toast.LENGTH_SHORT).show();
         }
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == RESULT_OK && requestCode == UCrop.REQUEST_CROP) {
-            final Uri resultUri = UCrop.getOutput(data);
-            File encoded = new File(resultUri.getPath());
-            String encod = "";
-            licenseCapture(encoded, encod);
-        } else if (resultCode == UCrop.RESULT_ERROR) {
-            final Throwable cropError = UCrop.getError(data);
-            Toast.makeText(this, "There is some issue in cropping.", Toast.LENGTH_SHORT).show();
+        if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE) {
+            CropImage.ActivityResult result = CropImage.getActivityResult(data);
+            if (resultCode == RESULT_OK) {
+                File encoded = new File(result.getUri().getPath());
+                String encod = "";
+                licenseCapture(encoded, encod);
+            } else if (resultCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE) {
+                Exception error = result.getError();
+                Toast.makeText(this, "There is some issue in cropping.", Toast.LENGTH_SHORT).show();
+            }
         }
     }
 
